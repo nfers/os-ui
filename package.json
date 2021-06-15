@@ -1,7 +1,7 @@
 {
   "name": "os-ui",
   "author": {
-    "name": "Nayara Ferreira", 
+    "name": "Nayara Ferreira",
     "email": "ncy.fers@gmail.com"
   },
   "repository": {
@@ -18,10 +18,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.0.4",
+    "@angular/cdk": "^12.0.4",
     "@angular/common": "~12.0.4",
     "@angular/compiler": "~12.0.4",
     "@angular/core": "~12.0.4",
     "@angular/forms": "~12.0.4",
+    "@angular/material": "^12.0.4",
     "@angular/platform-browser": "~12.0.4",
     "@angular/platform-browser-dynamic": "~12.0.4",
     "@angular/router": "~12.0.4",
