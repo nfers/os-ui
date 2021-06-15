@@ -3,7 +3,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @Component({
-  selector: 'mat-toolbar',
+  selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
