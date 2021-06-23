@@ -24,6 +24,9 @@ import { HeaderComponent } from './views/components/templates/header/header.comp
 import { FooterComponent } from './views/components/templates/footer/footer.component';
 import { NavComponent } from './views/components/templates/nav/nav.component';
 import { HomeComponent } from './views/components/home/home.component';
+import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/tecnico-read.component';
+import { ClienteReadComponent } from './views/components/clientes/cliente-read/cliente-read.component';
+import { OsReadComponent } from './views/components/ordensServico/os-read/os-read.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { HomeComponent } from './views/components/home/home.component';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    TecnicoReadComponent,
+    ClienteReadComponent,
+    OsReadComponent
   ],
   imports: [
     BrowserModule,

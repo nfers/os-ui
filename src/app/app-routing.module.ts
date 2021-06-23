@@ -1,12 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClienteReadComponent } from './views/components/clientes/cliente-read/cliente-read.component';
 import { HomeComponent } from './views/components/home/home.component';
+import { OsReadComponent } from './views/components/ordensServico/os-read/os-read.component';
+import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/tecnico-read.component';
 
 const routes: Routes = [
   {
-    path: '', 
+    path: '',
     component: HomeComponent
+  },
+  {
+    path: 'tecnicos',
+    component: TecnicoReadComponent
+  },
+  {
+    path: 'clientes',
+    component: ClienteReadComponent
+  },
+  {
+    path: 'ordem-servico',
+    component: OsReadComponent
   }
+
 ];
 
 @NgModule({
