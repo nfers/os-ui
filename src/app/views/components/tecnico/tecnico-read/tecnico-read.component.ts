@@ -33,8 +33,8 @@ export class TecnicoReadComponent implements AfterViewInit {
   findAll(): void {
     this.service.findAll().subscribe((res) => {
       this.tecnicos = res;
-
-      console.log(this.tecnicos);
+      this.dataSource = new MatTableDataSource<Tecnico>(this.tecnicos);
+      this.dataSource.paginator = this.paginator;
     })
   }
 }
