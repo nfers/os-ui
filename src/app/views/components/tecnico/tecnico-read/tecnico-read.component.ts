@@ -33,7 +33,6 @@ export class TecnicoReadComponent implements AfterViewInit {
     this.findAll();
   }
 
-
   findAll(): void {
     this.service.findAll().subscribe((res) => {
       this.tecnicos = res;
@@ -46,4 +45,3 @@ export class TecnicoReadComponent implements AfterViewInit {
     this.router.navigate(['tecnicos/novo'])
   }
 }
-
