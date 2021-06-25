@@ -20,8 +20,8 @@ export class TecnicoCreateComponent implements OnInit {
   };
 
   constructor(
-    private router : Router, 
-    private service : TecnicoService
+    private router: Router,
+    private service: TecnicoService
   ) { }
 
   ngOnInit(): void {
@@ -31,11 +31,17 @@ export class TecnicoCreateComponent implements OnInit {
     this.router.navigate(['tecnicos'])
   }
 
-  create():void {
+  create(): void {
     this.service.create(this.tecnico).subscribe((res) => {
       this.router.navigate(['tecnicos'])
-      console.log(res)
+
       this.service.message('Técnico Criado com Sucesso');
+    }, err => {
+      console.log(err)
+      if (err.message !== '') {
+        this.service.message(`Falha ao adicionar Técnico nome: ${this.tecnico.name},
+         mensagem: ${err.message}`)
+      }
     })
   }
 }
