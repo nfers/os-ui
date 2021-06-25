@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Tecnico } from 'src/app/models/Tecnico';
@@ -14,10 +15,14 @@ export class TecnicoCreateComponent implements OnInit {
 
   tecnico: Tecnico = {
     id: '',
-    name: 'Mariana',
-    cpf: '952.662.440-89',
-    phone: '(62) 993489642'
+    name: '',
+    cpf: '',
+    phone: ''
   };
+
+  name = new FormControl('', [Validators.minLength(5)]);
+  cpf = new FormControl('', [Validators.minLength(11)]);
+  phone = new FormControl('', [Validators.minLength(11)]);
 
   constructor(
     private router: Router,
@@ -43,5 +48,26 @@ export class TecnicoCreateComponent implements OnInit {
          mensagem: ${err.message}`)
       }
     })
+  }
+
+  errorValidName() {
+    if(this.name.invalid) {
+      return 'O nome deve ter no mínimo 5 carácteres';
+    }
+    return false;
+  }
+
+  errorValidPhone() {
+    if(this.phone.invalid) {
+      return 'O Telefone deve ter no mínimo 11 carácteres';
+    }
+    return false; 
+  }
+
+  errorValidCpf() {
+    if(this.cpf.invalid) {
+      return 'O cpf deve ter no mínimo 11 carácteres';
+    }
+    return false;
   }
 }
