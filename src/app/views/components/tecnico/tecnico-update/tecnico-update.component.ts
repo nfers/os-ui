@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Tecnico } from 'src/app/models/Tecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
-  selector: 'app-tecnico-create',
-  templateUrl: './tecnico-create.component.html',
-  styleUrls: ['./tecnico-create.component.css']
+  selector: 'app-tecnico-update',
+  templateUrl: './tecnico-update.component.html',
+  styleUrls: ['./tecnico-update.component.css']
 })
+export class TecnicoUpdateComponent implements OnInit {
 
-export class TecnicoCreateComponent implements OnInit {
 
   tecnico: Tecnico = {
     id: '',
@@ -29,25 +28,12 @@ export class TecnicoCreateComponent implements OnInit {
     private service: TecnicoService
   ) { }
 
+
   ngOnInit(): void {
   }
 
   cancel(): void {
     this.router.navigate(['tecnicos'])
-  }
-
-  create(): void {
-    this.service.create(this.tecnico).subscribe((res) => {
-      this.router.navigate(['tecnicos'])
-
-      this.service.message('Técnico Criado com Sucesso');
-    }, err => {
-      console.log(err)
-      if (err.message !== '') {
-        this.service.message(`Falha ao adicionar Técnico nome: ${this.tecnico.name},
-         mensagem: ${err.message}`)
-      }
-    })
   }
 
   errorValidName() {

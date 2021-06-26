@@ -28,6 +28,7 @@ import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/te
 import { ClienteReadComponent } from './views/components/clientes/cliente-read/cliente-read.component';
 import { OsReadComponent } from './views/components/ordensServico/os-read/os-read.component';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
+import { TecnicoUpdateComponent } from './views/components/tecnico/tecnico-update/tecnico-update.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-creat
     TecnicoReadComponent,
     ClienteReadComponent,
     OsReadComponent,
-    TecnicoCreateComponent
+    TecnicoCreateComponent,
+    TecnicoUpdateComponent
   ],
   imports: [
     BrowserModule,
