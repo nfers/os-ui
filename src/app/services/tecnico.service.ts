@@ -13,20 +13,32 @@ export class TecnicoService {
   baseUrl: String = environment.baseUrl;
 
   constructor(
-    private http : HttpClient,
+    private http: HttpClient,
     private snack: MatSnackBar
-    ) { }
+  ) { }
 
-  findAll():Observable<Tecnico[]> {
+  findAll(): Observable<Tecnico[]> {
     const url = this.baseUrl + "/api/v1/technique";
 
     return this.http.get<Tecnico[]>(url);
   }
 
-  create(tecnico: Tecnico):Observable<Tecnico> {
+  create(tecnico: Tecnico): Observable<Tecnico> {
     const url = this.baseUrl + "/api/v1/technique";
 
     return this.http.post<Tecnico>(url, tecnico)
+  }
+
+  findById(id: any): Observable<Tecnico> {
+    const url = this.baseUrl + "/api/v1/technique/" + id;
+
+    return this.http.get<Tecnico>(url);
+  }
+
+  update(tecnico: Tecnico): Observable<Tecnico> {
+    const url = this.baseUrl + "/api/v1/technique/" + tecnico.id;
+
+    return this.http.put<Tecnico>(url, tecnico)
   }
 
   message(msg: String): void {
