@@ -1,15 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+import { Cliente } from 'src/app/models/Cliente';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-cliente-read',
   templateUrl: './cliente-read.component.html',
   styleUrls: ['./cliente-read.component.css']
 })
-export class ClienteReadComponent implements OnInit {
+export class ClienteReadComponent implements AfterViewInit {
 
-  constructor() { }
+  clientes: Cliente[] = []
 
-  ngOnInit(): void {
+  displayedColumns: string[] = ['id', 'name', 'cpf', 'phone', 'action'];
+  dataSource = new MatTableDataSource<Cliente>(this.clientes);
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  constructor(
+    private service : ClienteService,
+    private router : Router
+    ) {
   }
 
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.findAll();
+  }
+
+  findAll(): void {
+    this.service.findAll().subscribe((res) => {
+      this.clientes = res;
+      this.dataSource = new MatTableDataSource<Cliente>(this.clientes);
+      this.dataSource.paginator = this.paginator;
+    })
+  }
+
+  navigateToCreate():void {
+    this.router.navigate(['clientes/novo'])
+  }
 }

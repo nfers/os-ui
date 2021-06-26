@@ -30,6 +30,9 @@ import { OsReadComponent } from './views/components/ordensServico/os-read/os-rea
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoUpdateComponent } from './views/components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './views/components/tecnico/tecnico-delete/tecnico-delete.component';
+import { ClienteCreateComponent } from './views/components/clientes/cliente-create/cliente-create.component';
+import { ClienteDeleteComponent } from './views/components/clientes/cliente-delete/cliente-delete.component';
+import { OsCreateComponent } from './views/components/ordensServico/os-create/os-create.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { TecnicoDeleteComponent } from './views/components/tecnico/tecnico-delet
     OsReadComponent,
     TecnicoCreateComponent,
     TecnicoUpdateComponent,
-    TecnicoDeleteComponent
+    TecnicoDeleteComponent,
+    ClienteCreateComponent,
+    ClienteDeleteComponent,
+    OsCreateComponent
   ],
   imports: [
     BrowserModule,
