@@ -37,22 +37,23 @@ export class TecnicoDeleteComponent implements OnInit {
     })
   }
 
-  cancel(): void {
-    this.router.navigate(['tecnicos'])
-  }
+  delete(): void {
 
-  update(): void {
-    this.service.update(this.tecnico).subscribe((res) => {
+    this.service.delete(this.id_tech).subscribe((res) => {
       this.router.navigate(['tecnicos'])
-      this.service.message('Técnico Criado com Sucesso');
+      this.service.message(`Técnico id ${this.id_tech} removido com sucesso!`)
     }, err => {
       console.log(err)
       if (err.message !== '') {
-        this.service.message(`Falha ao alterar os dados do Técnico: ${this.tecnico.name},
+        this.service.message(`Erro ao remove o técnico id: ${this.id_tech},
          mensagem: ${err.message}`)
       }
     })
   }
-  
+
+  cancel(): void {
+    this.router.navigate(['tecnicos'])
+  }
+
 }
 

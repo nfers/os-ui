@@ -31,7 +31,7 @@ export class TecnicoService {
 
   findById(id: any): Observable<Tecnico> {
     const url = this.baseUrl + "/api/v1/technique/" + id;
-
+    console.log("chamou aqui")
     return this.http.get<Tecnico>(url);
   }
 
@@ -39,6 +39,12 @@ export class TecnicoService {
     const url = this.baseUrl + "/api/v1/technique/" + tecnico.id;
 
     return this.http.put<Tecnico>(url, tecnico)
+  }
+
+  delete(id: any): Observable<void> {
+    const url = this.baseUrl + "/api/v1/technique/" + id;
+
+    return this.http.delete<void>(url);
   }
 
   message(msg: String): void {

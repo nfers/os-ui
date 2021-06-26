@@ -25,10 +25,10 @@ const routes: Routes = [
     path: 'tecnicos/alterar/:id',
     component: TecnicoUpdateComponent
   },
-  // {
-  //   path: 'tecnicos/remover/:id',
-  //   component: TecnicoDeleteComponent
-  // },
+  {
+    path: 'tecnicos/delete/:id',
+    component: TecnicoDeleteComponent
+  },
   {
     path: 'clientes',
     component: ClienteReadComponent
