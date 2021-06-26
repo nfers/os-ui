@@ -4,6 +4,7 @@ import { ClienteReadComponent } from './views/components/clientes/cliente-read/c
 import { HomeComponent } from './views/components/home/home.component';
 import { OsReadComponent } from './views/components/ordensServico/os-read/os-read.component';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
+import { TecnicoDeleteComponent } from './views/components/tecnico/tecnico-delete/tecnico-delete.component';
 import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/tecnico-read.component';
 import { TecnicoUpdateComponent } from './views/components/tecnico/tecnico-update/tecnico-update.component';
 
@@ -24,6 +25,10 @@ const routes: Routes = [
     path: 'tecnicos/alterar/:id',
     component: TecnicoUpdateComponent
   },
+  // {
+  //   path: 'tecnicos/remover/:id',
+  //   component: TecnicoDeleteComponent
+  // },
   {
     path: 'clientes',
     component: ClienteReadComponent
