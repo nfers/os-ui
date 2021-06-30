@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteCreateComponent } from './views/components/clientes/cliente-create/cliente-create.component';
+import { ClienteDeleteComponent } from './views/components/clientes/cliente-delete/cliente-delete.component';
 import { ClienteReadComponent } from './views/components/clientes/cliente-read/cliente-read.component';
+import { ClienteUpdateComponent } from './views/components/clientes/cliente-update/cliente-update.component';
 import { HomeComponent } from './views/components/home/home.component';
-import { OsReadComponent } from './views/components/ordensServico/os-read/os-read.component';
+import { OrdemServicoReadComponent } from './views/components/ordem-servico/ordem-servico-read/ordem-servico-read.component';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoDeleteComponent } from './views/components/tecnico/tecnico-delete/tecnico-delete.component';
 import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/tecnico-read.component';
@@ -39,10 +41,17 @@ const routes: Routes = [
     component: ClienteCreateComponent
   },
   {
+    path: 'clientes/alterar/:id',
+    component: ClienteUpdateComponent
+  },
+  {
+    path: 'clientes/delete/:id',
+    component: ClienteDeleteComponent  
+  },
+  {
     path: 'ordem-servico',
-    component: OsReadComponent
+    component: OrdemServicoReadComponent
   }
-
 ];
 
 @NgModule({
