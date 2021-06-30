@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Tecnico } from 'src/app/models/Tecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
 

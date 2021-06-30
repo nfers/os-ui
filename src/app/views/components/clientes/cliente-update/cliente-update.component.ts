@@ -1,59 +1,58 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Tecnico } from 'src/app/models/Tecnico';
-import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Cliente } from 'src/app/models/Cliente';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-tecnico-update',
-  templateUrl: './tecnico-update.component.html',
-  styleUrls: ['./tecnico-update.component.css']
+  selector: 'app-cliente-update',
+  templateUrl: './cliente-update.component.html',
+  styleUrls: ['./cliente-update.component.css']
 })
-export class TecnicoUpdateComponent implements OnInit {
+export class ClienteUpdateComponent implements OnInit {
 
-  id_tech = '';
+  id_cli = '';
 
-  tecnico: Tecnico = {
+   cliente: Cliente = {
     id: '',
     name: '',
     cpf: '',
     phone: ''
   };
-
   name = new FormControl('', [Validators.minLength(5)]);
   cpf = new FormControl('', [Validators.minLength(11)]);
   phone = new FormControl('', [Validators.minLength(11)]);
 
   constructor(
     private router: Router,
-    private service: TecnicoService, 
+    private service: ClienteService, 
     private route: ActivatedRoute
   ) { }
 
 
   ngOnInit(): void {
-    this.id_tech = this.route.snapshot.paramMap.get('id')!
+    this.id_cli = this.route.snapshot.paramMap.get('id')!
     this.findById();
   }
 
   findById(): void {
-    this.service.findById(this.id_tech).subscribe((res) => {
-      this.tecnico = res;
+    this.service.findById(this.id_cli).subscribe((res) => {
+      this.cliente = res;
     })
   }
 
   cancel(): void {
-    this.router.navigate(['tecnicos'])
+    this.router.navigate(['clientes'])
   }
 
   update(): void {
-    this.service.update(this.tecnico).subscribe((res) => {
-      this.router.navigate(['tecnicos'])
-      this.service.message('Técnico Criado com Sucesso');
+    this.service.update(this.cliente).subscribe((res) => {
+      this.router.navigate(['clientes'])
+      this.service.message('Cliente alterado com Sucesso');
     }, err => {
       console.log(err)
       if (err.message !== '') {
-        this.service.message(`Falha ao alterar os dados do Técnico: ${this.tecnico.name},
+        this.service.message(`Falha ao alterar os dados do Cliente: ${this.cliente.name},
          mensagem: ${err.message}`)
       }
     })

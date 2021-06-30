@@ -33,6 +33,7 @@ import { TecnicoDeleteComponent } from './views/components/tecnico/tecnico-delet
 import { ClienteCreateComponent } from './views/components/clientes/cliente-create/cliente-create.component';
 import { ClienteDeleteComponent } from './views/components/clientes/cliente-delete/cliente-delete.component';
 import { OsCreateComponent } from './views/components/ordensServico/os-create/os-create.component';
+import { ClienteUpdateComponent } from './views/components/cliente-update/cliente-update.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { OsCreateComponent } from './views/components/ordensServico/os-create/os
     TecnicoDeleteComponent,
     ClienteCreateComponent,
     ClienteDeleteComponent,
-    OsCreateComponent
+    OsCreateComponent,
+    ClienteUpdateComponent
   ],
   imports: [
     BrowserModule,

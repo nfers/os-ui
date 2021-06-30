@@ -45,7 +45,7 @@ export class TecnicoDeleteComponent implements OnInit {
     }, err => {
       console.log(err)
       if (err.message !== '') {
-        this.service.message(`Erro ao remove o técnico id: ${this.id_tech},
+        this.service.message(`Erro ao remover o técnico id: ${this.id_tech},
          mensagem: ${err.message}`)
       }
     })
